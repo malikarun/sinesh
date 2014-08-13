@@ -1,0 +1,6 @@
+= simple_form_for @donation do |f|
+  = f.input :donator_name
+  = f.input :donator_address
+  = f.input :amount
+  = f.button :submit, class: 'btn btn-primary'
+  = link_to t('.cancel', default: t("helpers.links.cancel")), admin_donations_path, class: 'btn btn-danger'

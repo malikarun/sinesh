@@ -1,13 +1,11 @@
 %html
   %head
-    %title Studly
+    %title Partiyogita
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
-    %meta{content: "width=device-width, user-scalable=no", name: "viewport"}/
-    %link{href: asset_path("favicon.ico"), rel: "shortcut icon", type: "image/x-icon"}/
-    %link{href: asset_path("favicon.ico"), rel: "icon", type: "image/x-icon"}/
+    %meta{content: "width=device-width, user-scalable=no", name: "viewport"}
   %body
     = render '/layouts/nav_bar'
     .container

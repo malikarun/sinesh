@@ -1,0 +1,18 @@
+.panel.panel-info
+  .panel-heading
+    %h4
+      %em Recent Donators in Partiyogita
+      .pull-right= link_to 'Add new Donation', new_donation_path, class: 'btn btn-primary' if admin?
+    .clearfix
+  %table.table.table-hover.datatable
+    %thead
+      %tr
+        %th=fa_icon 'user', text: "Donator's Name"
+        %th=fa_icon 'bank', text: "Donator's Address"
+        %th Donation Amount
+    %tbody
+      - @donations.each do |donation|
+        %tr
+          %td= donation.donator_name
+          %td= donation.donator_address
+          %td=fa_icon 'inr',  text: donation.amount
