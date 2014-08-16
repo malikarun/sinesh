@@ -26,6 +26,11 @@ class DonationsController < ApplicationController
   end
 
   def update
+    if @donation.update! donation_params
+      redirect_to donations_path
+    else
+      render action: :edit, notice: 'An error Occured'
+    end
   end
 
   def destroy
@@ -35,7 +40,7 @@ class DonationsController < ApplicationController
 private
   # Use callbacks to share common setup or constraints between actions.
   def set_donation
-    @comment = Comment.find(params[:id])
+    @donation = Donation.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
